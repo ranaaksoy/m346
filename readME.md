@@ -14,7 +14,7 @@ Dieser Ornder beeinhaltet 10 verschiedene Dateien. Klicken Sie auf die Links unt
    TEST
 
 4. [KN04](./KN04)  
-   TE ST
+   TEST
 
 5. [KN05](./KN05)  
    TEST
