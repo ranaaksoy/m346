@@ -71,7 +71,7 @@ On-Premise: Überdimensionierung für Lastspitzen nötig
 
 Die verbrauchsbasierte Abrechnung und der reduzierte Verwaltungsaufwand machen die Cloud-Lösung besonders für kleinere bis mittlere Anwendungen kostengünstiger.
 
-**Dynos -> 
+**Dynos ->**
 
 Web Dynos:
 
