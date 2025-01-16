@@ -126,6 +126,9 @@ Der massive Preisunterschied (151€) macht Zoho zur kosteneffizienteren Wahl.
 ### Empfehlung
 
 Für ein KMU mit 30 Benutzern wäre **Zoho CRM** die kosteneffizienteste Lösung mit dem geringsten Aufwand, solange die Standard-Funktionalität ausreicht. 
+
+**Wenn nicht Zoro dann:**
+
 **Heroku** bietet eine gute Alternative, wenn mehr Anpassbarkeit benötigt wird, während **AWS** und **Azure** hohe Flexibilität, jedoch auch hohe laufende Kosten und Verwaltungsaufwand erfordern.
 
 
