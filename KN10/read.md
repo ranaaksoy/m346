@@ -39,6 +39,46 @@ Zusammenfassung der Abweichungen:
 ![alt text](heroku_preisliste_db.jpg) 
 ![alt text](heroku_preisliste_web.jpg)
 
+### Begründung zur Auswahl:
+
+Der Standard Tier eignet sich für die meisten Webanwendungen, da er eine ausgewogene Kombination aus Leistung und Kosten bietet. Mit 1GB RAM und einer vCPU für den Webserver sowie 4GB RAM und 100GB Speicher für die Datenbank sind die grundlegenden Ressourcenanforderungen abgedeckt. Die Nutzung separater Dynos für Web und Datenbank ist trotz höherer Kosten empfehlenswert, um Performance und Sicherheit zu gewährleisten.
+
+**Kostenvorteile Cloud vs. On-Premise:**
+
+**Investitionskosten:**
+
+Cloud: Keine Vorabinvestitionen
+
+On-Premise: Hohe Hardware-Anschaffungskosten
+
+**Betriebskosten:**
+
+Cloud: Nutzungsbasierte Abrechnung
+
+On-Premise: Fixkosten für Wartung, Strom, Kühlung
+
+**Personalaufwand:**
+
+Cloud: Reduzierter Administrationsaufwand
+
+On-Premise: Dediziertes IT-Personal erforderlich
+
+**Skalierung:**
+
+Cloud: Flexible Anpassung nach Bedarf
+
+On-Premise: Überdimensionierung für Lastspitzen nötig
+
+Die verbrauchsbasierte Abrechnung und der reduzierte Verwaltungsaufwand machen die Cloud-Lösung besonders für kleinere bis mittlere Anwendungen kostengünstiger.
+
+**Dynos -> 
+
+Web Dynos:
+
+Führen Webanwendungen aus
+Verarbeiten HTTP-Anfragen
+Ideal für Client-facing Anwendungen
+
 ## C. Kostenrechnung SAAS - Repurchasing
 
 ![alt text](salesforce.jpg)
