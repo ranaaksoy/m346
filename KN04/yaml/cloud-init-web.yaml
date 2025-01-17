@@ -1,67 +1,50 @@
 #cloud-config
-users: # Die Benutzer
-  - name: ubuntu # Benutzername
-    sudo: ALL=(ALL) NOPASSWD:ALL # Rechte
-    groups: users, admin #Rechte
-    home: /home/ubuntu # Home Pfad
-    shell: /bin/bash # Shell
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO2l24krAYLYhuq7C/G1nkgjGxmRzPRTsuXBq/39bgw6YmwePkprlqppEwMnsrGV3/JSWi/HTTcJTD1J86cq5iEGXgHa+i513rGdhZr1aGpk1+6ytnzt1z6C15pCdGN62ap+Wn1tGQVUzxL+MB2BxE1FOEVaX0DBxAGBlhwy9g4tNud$4tNudoFp69AFWyPQRe69/S2yrwy6r4m4q6fMnTlzYbK17u0CzV1zE6ZP/VRVa4zsiNAvE7M3Vtd9LUH39y/T7SMxWjFxZuzaYtFbRy7YfzZE5omxQaEfeXN+ybbtE79J/LE6Y1b8WiGi+JcL4NhwJGu1VHj5m1NxT8Axu85upY2J aws-key # SSH Key     
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQClI5/25VtBL7ozv3bsPmFsAJBKcEn68tJx+tenoYgPEvUJI7T6dGxqlaP6901QRbzU27udS0JoV5ycDYLlKiJYFRQWVmK9hfNe5o7CJuDiuKK7A1q3FetEhx2qxuc0w/E6Ly2EuGz1baV2rJTFmhck86KlS58pKgRGQo/0q3ob+4AQZKR9a/J9/jxaSMtGZis7nrBLrpxF94FxPFOyNDhaJSHj8fsIOXeyVN8/IvWIEBD5BxSNu2WlKqIphPMAcb3iVBMfGsVSo75gMd/olagjdHe+0+mkX/ViS2GXlfMA2oyhc5KKOVdy/X0AoIsMTLtvpnrQMjxvLjJmX23yVKaF aws-key # SSH Key     
-ssh_pwauth: false # Passwort Authentifikation
-disable_root: false # Kein Root
-package_update: true # Packages updaten
-packages: # Die Packages
-  - apache 2
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO2l24krAYLYhuq7C/G1nkgjGxmRzPRTsuXBq/39bgw6YmwePkprlqppEwMnsrGV3/JSWi/HTTcJTD1J86cq5iEGXgHa+i513rGdhZr1aGpk1+6ytnzt1z6C15pCdGN62ap+Wn1tGQVUzxL+MB2BxE1FOEVaX0DBxAGBlhwy9g4tNudoFp69AFWyPQRe69/S2yrwy6r4m4q6fMnTlzYbK17u0CzV1zE6ZP/VRVa4zsiNAvE7M3Vtd9LUH39y/T7SMxWjFxZuzaYtFbRy7YfzZE5omxQaEfeXN+ybbtE79J/LE6Y1b8WiGi+JcL4NhwJGu1VHj5m1NxT8Axu85upY2J
+    ssh_pwauth: false
+disable_root: true
+package_update: true
+package_upgrade: true
+packages:
+  - apache2
   - php
   - php-mysql
   - adminer
-
-
-runcmd:
-  - sudo a2enconf adminer
-  - sudo systemctl restart apache2
-
-
+  - mysql-client
+  - curl
+  - wget
 write_files:
-  - path: /var/www/html/db.php
+  - path: /var/www/html/index.html
     content: |
       <html>
-      <head></head>
-      <body>
-        Diese Seite macht eine Abfrage auf die Datenbank. <br />
-        Das ausgeführte Query ist: <i>select Host, User from mysql.user;</i><br /><br />
-        Das Resultat: <br />
-        <?php
-          // database
-          $servername = "[IP-Adresse vom DB instanz]";
-          $username = "admin";
-          $password = "rana123";
-          $dbname = "mysql";
-
-          // Create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-
-          // Check connection
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-          $sql = "select Host, User from mysql.user;";
-          $result = $conn->query($sql);
-
-          while ($row = $result->fetch_assoc()) {
-            echo("<li>" . $row["Host"] . " / " . $row["User"] . "</li>");
-          }
-
-          // var_dump($result);
-        ?>
-      </body>
+      <head><title>Webserver</title></head>
+      <body><h1>Webserver läuft!</h1></body>
       </html>
-
   - path: /var/www/html/info.php
     content: |
+      <?php phpinfo(); ?>
+  - path: /var/www/html/db.php
+    content: |
       <?php
-      // Show all information, defaults to INFO_ALL
-      phpinfo();
+      $servername = "172.31.24.49"; // Private IP des DB-Servers
+      $username = "admin";
+      $password = "admin";
+      $dbname = "MainDatabase";
+
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
       ?>
+runcmd:
+  - apt update
+  - a2enconf adminer
+  - systemctl restart apache2
+  - echo "Cloud-Init Web erfolgreich abgeschlossen" > /home/ubuntu/init.log
