@@ -40,8 +40,6 @@ Details:
 
 Instanztyp: t2.medium
 
-![alt text](<Bildschirmfoto 2025-01-29 um 18.31.17.png>)
-
 Sicherheitsgruppen: HTTP (Port 80) und 5000 für internen Traffic.
 
 VPC und Subnet: Gleich wie die bestehende Umgebung.
