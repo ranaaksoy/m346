@@ -10,11 +10,14 @@ Ein Reverse Proxy ist ein Server, der Anfragen von Clients entgegennimmt und an 
 
 ![alt text](<Bildschirmfoto 2025-01-29 um 18.24.02.png>)
 
+![alt text](<Bildschirmfoto 2025-01-31 um 15.29.57.png>)
+
 - hier wurde es von 8gBb zu 20gb gewechselt.
 
 ![alt text](<Bildschirmfoto 2025-01-29 um 18.25.34.png>) 
 
-![alt text](<Bildschirmfoto 2025-01-29 um 18.28.42.png>) 
+![alt text](<Bildschirmfoto 2025-01-29 um 18.28.42.png>)
+
 
 
 ## Horizontale Skalierung mit Auto Scaling
