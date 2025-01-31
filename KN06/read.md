@@ -66,6 +66,8 @@ Eine Instanz entfernen, wenn die CPU-Auslastung unter 25% fällt.
 
 Eine Instanz wurde manuell gestoppt, um den Ausfallschutz zu testen.
 
+Monitoring: Überwachung der Systemleistung es ist damit die Ressourcen automatisch hoch und herunterskaliert werden.
+
 Ergebnis: Die Auto-Scaling-Gruppe startete automatisch eine neue Instanz, um die gewünschte Anzahl von 2 Instanzen beizubehalten.
 
 ### Fazit
