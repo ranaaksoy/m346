@@ -6,19 +6,19 @@ Um eine Public IP für eine RDS von AWS zu erhalten, muss die RDS in einem öffe
 
 ![alt text](<Bildschirmfoto 2025-01-30 um 11.06.34.png>)
 
-PAAS (Platform as a Service) und SAAS (Software as a Service) bieten zahlreiche Vorteile gegenüber einer selbst gehosteten Datenbank:
+PAAS (Platform as a Service) und SAAS (Software as a Service) bieten gegenüber einer selbst gehosteten Datenbank zahlreiche Vorteile:
+•	Regelmäßige Sicherheitsaktualisierungen: Sicherheitslücken werden durch automatische Updates geschlossen.
 
-•	Regelmäßige Sicherheitsupdates: Sicherheits-Patches werden regelmäßig eingespielt, wodurch Schwachstellen minimiert werden.
+•	Dynamische Skalierung: Die Datenbank wächst flexibel mit den 
+Anforderungen des Unternehmens.
 
-•	Einfache Skalierbarkeit: Die Datenbank kann flexibel an steigende Anforderungen angepasst werden.
+•	Effiziente Kostenstruktur: Durch das nutzungsbasierte Abrechnungsmodell fallen nur Kosten für tatsächlich genutzte Ressourcen an, ohne Investitionen in eigene Hardware oder Wartung.
 
-•	Kosteneffizienz: Dank des Pay-as-you-go-Modells zahlt man nur für die tatsächlich genutzten Ressourcen, ohne Investitionen in Hardware oder Wartung.
+•	Hohe Verfügbarkeit: Cloud-Anbieter gewährleisten durch Redundanz und Ausfallsicherheit eine stabile Performance.
 
-•	Hohe Verfügbarkeit: Cloud-Dienste gewährleisten Redundanz und Ausfallsicherheit.
+•	Umfassende Sicherheitsmaßnahmen: Funktionen wie Verschlüsselung und Zugriffskontrollen sind standardmäßig integriert.
 
-•	Erweiterte Sicherheitsmaßnahmen: Verschlüsselung, Zugriffskontrollen und andere Sicherheitsstandards sind bereits integriert.
-
-•	Schnelle Bereitstellung: Datenbanken lassen sich innerhalb weniger Minuten erstellen und konfigurieren, wodurch sie flexibel an unterschiedliche Anforderungen angepasst werden können.
+•	Schnelle Inbetriebnahme: Datenbanken lassen sich in wenigen Minuten einrichten und konfigurieren, wodurch sie sofort einsatzbereit sind.
 
 #### Auto Scaling aktiviert:
 
